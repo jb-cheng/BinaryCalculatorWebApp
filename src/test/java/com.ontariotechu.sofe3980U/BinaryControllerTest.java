@@ -51,7 +51,6 @@ public class BinaryControllerTest {
     }
 
 	@Test
-    @DisplayName("Test addition operation")
     public void postParameter() throws Exception {
         this.mvc.perform(post("/").param("operand1","111").param("operator","+").param("operand2","111"))//.andDo(print())
             .andExpect(status().isOk())
@@ -61,16 +60,14 @@ public class BinaryControllerTest {
     }
 
     @Test
-    @DisplayName("Test for the multiplication operation")
     public void testMultiplication() throws Exception {
         this.mvc.perform(post("/").param("operand1","111").param("operator","*").param("operand2","101"))//.andDo(print())
             .andExpect(status().isOk())
             .andExpect(view().name("result"))
-            .andExpect(model().attribute("result", "11001"));
+            .andExpect(model().attribute("result", "100011"));
     }
 
     @Test
-    @DisplayName("Test for the or operation")
     public void testOr() throws Exception {
         this.mvc.perform(post("/").param("operand1","111").param("operator","|").param("operand2","101"))//.andDo(print())
             .andExpect(status().isOk())
@@ -79,7 +76,6 @@ public class BinaryControllerTest {
     }
 
     @Test
-    @DisplayName("Test for the and operation")
     public void testAnd() throws Exception {
         this.mvc.perform(post("/").param("operand1","111").param("operator","&").param("operand2","101"))//.andDo(print())
             .andExpect(status().isOk())
