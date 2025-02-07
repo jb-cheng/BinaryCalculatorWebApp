@@ -1,0 +1,33 @@
+# Binary Calculator Webapp
+# Introduction
+
+In modern software development, efficient project management and automation of build processes are crucial for maintaining productivity and consistency. Spring Boot, a popular framework for building Java-based applications, streamlines development by providing pre-configured settings and simplifying dependency management. In this lab, Spring Boot (alongside Maven) and its core functionalities were explored.
+
+# Video
+[ommitted from README]
+
+# Test Cases
+
+The test cases for the Binary Calculator Webapp are designed to ensure the accuracy and reliability of the application's functionality. Below is a summary of the test cases as implemented in the Java file:
+
+**Note:** Both the WebApp and API tests follow the same structure and logic as the function tests listed below.
+
+| **Test Case Number** | **Function Tested**      | **Description**                                                                                     | **Input Values**                  | **Expected Values** | **Pass/Fail** |
+|---------------------|--------------------------|-----------------------------------------------------------------------------------------------------|-----------------------------------|---------------------|--------------|
+| 1                   | `Binary.add()`            | Verify that the addition of two binary numbers is calculated correctly.                             | operand1: "111", operand2: "1010" | "10001"             | Pass         |
+| 2                   | `Binary.add()`            | Ensure that adding empty operands returns zero.                                                     | operand1: "", operand2: ""        | "0"                 | Pass         |
+| 6                   | `Binary.add()`            | Verify the behavior when input is empty or null.                                                    | operand1: "", operand2: ""        | "0"                 | Pass         |
+| 7                   | `Binary.add()`            | Check the handling of valid binary numbers.                                                         | operand1: "111", operand2: "1010" | "10001"             | Pass         |
+| 11                  | `Binary.add()`            | Verify addition with empty operands returning the result as a string.                               | operand1: "", operand2: ""        | "0"                 | Pass         |
+| 12                  | `Binary.add()`            | Verify addition with empty operands returning the result in JSON format.                            | operand1: "", operand2: ""        | "0"                 | Pass         |
+| 3                   | `Binary.multiply()`       | Ensure that multiplying empty operands returns zero.                                                | operand1: "", operand2: ""        | "0"                 | Pass         |
+| 8                   | `Binary.multiply()`       | Ensure that multiplication of binary numbers is calculated correctly.                               | operand1: "111", operand2: "1010" | "1000110"           | Pass         |
+| 15                  | `Binary.multiply()`       | Verify multiplication with empty operands returning the result in JSON format.                      | operand1: "", operand2: ""        | "0"                 | Pass         |
+| 4                   | `Binary.or()`             | Ensure that OR operation with empty operands returns zero.                                          | operand1: "", operand2: ""        | "0"                 | Pass         |
+| 9                   | `Binary.or()`             | Verify the OR operation on two binary numbers.                                                      | operand1: "111", operand2: "1010" | "1111"              | Pass         |
+| 13                  | `Binary.or()`             | Verify OR operation with empty operands returning the result in JSON format.                        | operand1: "", operand2: ""        | "0"                 | Pass         |
+| 5                   | `Binary.and()`            | Ensure that AND operation with empty operands returns zero.                                         | operand1: "", operand2: ""        | "0"                 | Pass         |
+| 10                  | `Binary.and()`            | Verify the AND operation on two binary numbers.                                                     | operand1: "111", operand2: "1010" | "10"                | Pass         |
+| 14                  | `Binary.and()`            | Verify AND operation with empty operands returning the result in JSON format.                       | operand1: "", operand2: ""        | "0"                 | Pass         |
+
+![Pass Cases](PassCases.png)
