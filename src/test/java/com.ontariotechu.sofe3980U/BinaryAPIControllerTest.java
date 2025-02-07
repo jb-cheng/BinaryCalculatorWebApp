@@ -32,17 +32,80 @@ public class BinaryAPIControllerTest {
     @Autowired
     private MockMvc mvc;
 
+    /*************************
+     * Test return Strings
+     *************************/
     // Test for adding two binary numbers and expecting the result as a string
     @Test
-    public void add() throws Exception {
+    public void addTest() throws Exception {
         this.mvc.perform(get("/add").param("operand1","111").param("operand2","1010"))
             .andExpect(status().isOk())
             .andExpect(content().string("10001"));
     }
 
+    // Test for adding two binary numbers with empty operands and expecting the result as a string
+    @Test
+    public void addTestEmpty() throws Exception {
+        this.mvc.perform(get("/add").param("operand1","").param("operand2",""))
+            .andExpect(status().isOk())
+            .andExpect(content().string("0"));
+    }
+
+    // Test for AND operation between two binary numbers
+    @Test
+    public void andTest() throws Exception {
+        this.mvc.perform(get("/and").param("operand1", "111").param("operand2", "1010"))
+            .andExpect(status().isOk())
+            .andExpect(content().string("10"));
+    }
+
+    // Test for AND operation with empty operands
+    @Test
+    public void andTestEmpty() throws Exception {
+        this.mvc.perform(get("/and").param("operand1", "").param("operand2", ""))
+            .andExpect(status().isOk())
+            .andExpect(content().string("0"));
+    }
+
+    // Test for OR operation between two binary numbers
+    @Test
+    public void orTest() throws Exception {
+        this.mvc.perform(get("/or").param("operand1", "111").param("operand2", "1010"))
+            .andExpect(status().isOk())
+            .andExpect(content().string("1111"));
+    }
+
+    // Test for OR operation with empty operands
+    @Test
+    public void orTestEmpty() throws Exception {
+        this.mvc.perform(get("/or").param("operand1", "").param("operand2", ""))
+            .andExpect(status().isOk())
+            .andExpect(content().string("0"));
+    }
+
+    // Test for multiply operation between two binary numbers
+    @Test
+    public void multiplyTest() throws Exception {
+        this.mvc.perform(get("/multiply").param("operand1", "101").param("operand2", "11"))
+            .andExpect(status().isOk())
+            .andExpect(content().string("1111"));
+    }
+
+    // Test for multiply operation with empty operands
+    @Test
+    public void multiplyTestEmpty() throws Exception {
+        this.mvc.perform(get("/multiply").param("operand1", "").param("operand2", ""))
+            .andExpect(status().isOk())
+            .andExpect(content().string("0"));
+    }
+
+
+    /*************************
+     * Test return JSON
+     *************************/
     // Test for adding two binary numbers and expecting the result in JSON format
     @Test
-    public void add2() throws Exception {
+    public void addTestJSON() throws Exception {
         this.mvc.perform(get("/add_json").param("operand1","111").param("operand2","1010"))
             .andExpect(status().isOk())
             .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(111))
@@ -82,14 +145,6 @@ public class BinaryAPIControllerTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(1010))
             .andExpect(MockMvcResultMatchers.jsonPath("$.result").value(10))
             .andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("and"));
-    }
-
-    // Test for adding two binary numbers with empty operands and expecting the result as a string
-    @Test
-    public void testAddWithEmptyOperands() throws Exception {
-        this.mvc.perform(get("/add").param("operand1","").param("operand2",""))
-            .andExpect(status().isOk())
-            .andExpect(content().string("0"));
     }
 
     // Test for adding two binary numbers with empty operands and expecting the result in JSON format

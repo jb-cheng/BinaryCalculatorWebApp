@@ -10,7 +10,7 @@ In modern software development, efficient project management and automation of b
 
 The test cases for the Binary Calculator Webapp are designed to ensure the accuracy and reliability of the application's functionality. Below is a summary of the test cases as implemented in the Java file:
 
-**Note:** Both the WebApp and API tests follow the same structure and logic as the function tests listed below.
+**Note:** The WebApp and API tests follow the same structure and logic as the tests listed below.  The API can return as either String or JSON by going to the link at `/add` and `/add_string` respectively.  As such, there are 30 tests in total.
 
 | **Test Case Number** | **Function Tested**      | **Description**                                                                                     | **Input Values**                  | **Expected Values** | **Pass/Fail** |
 |---------------------|--------------------------|-----------------------------------------------------------------------------------------------------|-----------------------------------|---------------------|--------------|
