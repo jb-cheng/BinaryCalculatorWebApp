@@ -30,5 +30,7 @@ The test cases for the Binary Calculator Webapp are designed to ensure the accur
 | 9                   | `getDefault()`            | Verify the correct default view and model attributes when accessing the root URL.                           | URL: "/"                          | View: "calculator", operand1: "", operand1Focused: false | Pass         |
 | 10                  | `getParameter()`          | Verify the correct view and model attributes when accessing the root URL with a parameter.                  | URL: "/", param: "operand1=111"   | View: "calculator", operand1: "111", operand1Focused: true | Pass         |
 
-![Pass Cases](PassCases.png)
+### Test Results
+![Pass Cases](PassCases.png)  
+  
 **Note:** The additional 8 test cases are from part I of this lab (`HelloController.java`/`HelloAPIController.java`).  
