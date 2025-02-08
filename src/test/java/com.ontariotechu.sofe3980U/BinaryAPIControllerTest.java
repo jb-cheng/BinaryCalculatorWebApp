@@ -86,9 +86,9 @@ public class BinaryAPIControllerTest {
     // Test for multiply operation between two binary numbers
     @Test
     public void multiplyTest() throws Exception {
-        this.mvc.perform(get("/multiply").param("operand1", "101").param("operand2", "11"))
+        this.mvc.perform(get("/multiply").param("operand1", "111").param("operand2", "1010"))
             .andExpect(status().isOk())
-            .andExpect(content().string("1111"));
+            .andExpect(content().string("1000110"));
     }
 
     // Test for multiply operation with empty operands
